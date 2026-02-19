@@ -8,29 +8,36 @@ import java.util.Scanner;
  */
 public class GroceryManagementSystem {
 
-    // Task 1 (Student 1 will complete)
     public static void printInventory(String[] names, double[] prices, int[] stocks) {
-        // TODO: teammate will implement
+
+        for (int i = 0; i < names.length; i++) {
+            if (names[i] != null) {
+                System.out.println("Item: " + names[i]);
+                System.out.println("Price: $" + prices[i]);
+                System.out.println("Stock: " + stocks[i]);
+                System.out.println("---------------------");
+            }
+        }
+
     }
 
     // Task 2 (Student 2 will complete)
-public static void restockItem(String[] names, int[] stocks, String target, int amount) {
-    boolean found = false;
+    public static void restockItem(String[] names, int[] stocks, String target, int amount) {
+        boolean found = false;
 
-    for (int i = 0; i < names.length; i++) {
-        if (names[i] != null && names[i].equalsIgnoreCase(target)) {
-            stocks[i] += amount;
-            found = true;
-            System.out.println("Restocked \"" + names[i] + "\". New stock: " + stocks[i]);
-            break;
+        for (int i = 0; i < names.length; i++) {
+            if (names[i] != null && names[i].equalsIgnoreCase(target)) {
+                stocks[i] += amount;
+                found = true;
+                System.out.println("Restocked \"" + names[i] + "\". New stock: " + stocks[i]);
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Item not found.");
         }
     }
-
-    if (!found) {
-        System.out.println("Item not found.");
-    }
-}
-
 
     // Task 3 (YOU will implement menu)
     public static void main(String[] args) {
