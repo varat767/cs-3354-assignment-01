@@ -4,10 +4,17 @@ import java.util.Scanner;
  * Grocery Management System
  * CS3354 Assignment 1
  *
- * This program manages grocery inventory using parallel arrays.
+ * This program manages grocery inventory system using parallel arrays.
  */
 public class GroceryManagementSystem {
 
+/**
+ * Displays all grocery items that are not empty.
+ *
+ * @param names  array of item names
+ * @param prices array of item prices
+ * @param stocks array of item stock quantities
+ */
     public static void printInventory(String[] names, double[] prices, int[] stocks) {
 
         for (int i = 0; i < names.length; i++) {
@@ -21,7 +28,14 @@ public class GroceryManagementSystem {
 
     }
 
-    // Task 2 (Student 2 will complete)
+/**
+ * Searches for an item by name and increases its stock quantity.
+ *
+ * @param names  array of item names
+ * @param stocks array of item stock quantities
+ * @param target name of item to restock
+ * @param amount quantity to add to stock
+ */
     public static void restockItem(String[] names, int[] stocks, String target, int amount) {
         boolean found = false;
 
@@ -39,7 +53,13 @@ public class GroceryManagementSystem {
         }
     }
 
-    // Task 3 (YOU will implement menu)
+/**
+ * Main method that runs the grocery management menu system.
+ * It initializes the parallel arrays and provides a user menu
+ * to view and restock inventory items.
+ *
+ * @param args command-line arguments (not used)
+ */
     public static void main(String[] args) {
 
         // Parallel arrays
@@ -47,7 +67,7 @@ public class GroceryManagementSystem {
         double[] itemPrices = new double[10];
         int[] itemStocks = new int[10];
 
-        // Sample starter data
+        // Data for sample starter
         itemNames[0] = "Milk";
         itemPrices[0] = 3.99;
         itemStocks[0] = 10;
